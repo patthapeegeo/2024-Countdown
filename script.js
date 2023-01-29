@@ -1,4 +1,4 @@
-const countDownDate = new Date("Jan 1, 2024 00:00:00").getTime()
+const countDownDate = new Date("Jan 1, 2024 01:00:00").getTime()
 
 // document.getElementById("countdown").innerHTML = countDownDate;
 
@@ -8,8 +8,11 @@ const  countDownTrigger = () => {
     const distance = countDownDate - now;
 
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
 
-    document.getElementById("countdown").innerHTML = days;
+    document.getElementById("countdown").innerHTML = days + "d " + hours + "h ";
 };
 
 countDownTrigger();
